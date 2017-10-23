@@ -5,10 +5,12 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.relatech.model.User;
 
 @Repository
+@Transactional
 public class UserDaoImpl extends AbstractDao implements UserDao {
 
 	@Override
