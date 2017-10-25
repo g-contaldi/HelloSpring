@@ -1,3 +1,3 @@
 # HelloSpring
 
-Una volta importato in eclipse -> tasto dx -> configure -> converto to maven project.
+Una volta importato in eclipse -> tasto dx -> configure -> convert to maven project.
