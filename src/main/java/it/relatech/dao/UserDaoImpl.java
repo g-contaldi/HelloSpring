@@ -51,4 +51,15 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 		delete(getUserById(id));
 	}
 
+	@Override
+	public boolean userExist(User user) {
+		Criteria criteria = getSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("username", user.getUsername()));
+		User result = (User) criteria.uniqueResult();
+		if (result != null)
+			return true;
+		else
+			return false;
+	}
+
 }

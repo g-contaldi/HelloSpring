@@ -18,4 +18,6 @@ public interface UserDao {
 
 	void deleteUserById(int id);
 
+	boolean userExist(User user);
+
 }
