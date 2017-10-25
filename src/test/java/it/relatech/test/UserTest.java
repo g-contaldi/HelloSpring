@@ -45,12 +45,13 @@ public class UserTest {
 	}
 
 	/**
-	 * Test for persist on db. At the end of test the transaction is rollabacked and the record is cancelled from the db.
+	 * Test for persist on db. At the end of test the transaction is rollabacked
+	 * and the record is cancelled from the db.
 	 * 
 	 * @throws Exception
 	 */
 	@Test
-	public void saveUser() throws Exception {
+	public void testSaveUser() throws Exception {
 		User user = new User();
 		user.setUsername("pippo");
 		user.setPassword("123");
@@ -69,12 +70,14 @@ public class UserTest {
 	public void testGetById() throws Exception {
 		int id = 1;
 		mockMvc.perform(get("/user/getById/" + id)).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8)).andDo(print()).andReturn().getResponse();
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8)).andDo(print()).andReturn()
+				.getResponse();
 	}
 
 	/**
-	 * Test for select *. The control is done on the first and second records, that must be, on username field, "giacomino" and "mimmo".
-
+	 * Test for select *. The control is done on the first and second records,
+	 * that must be, on username field, "giacomino" and "mimmo".
+	 * 
 	 * 
 	 * @throws Exception
 	 */
@@ -87,7 +90,8 @@ public class UserTest {
 	}
 
 	/**
-	 * Test with where clause. On db must be present a record with -> username: giacomino and password: 123456.
+	 * Test with where clause. On db must be present a record with -> username:
+	 * giacomino and password: 123456.
 	 * 
 	 * @throws Exception
 	 */
