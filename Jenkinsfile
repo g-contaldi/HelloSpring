@@ -3,7 +3,7 @@ pipeline {
     stages {
          stage ('Build') {
             steps {
-                sh 'mvn -s /var/lib/jenkins/maven/conf/global-settings.xml  -Dmaven.test.skip=true clean deploy' 
+                sh 'mvn -s /etc/maven/settings.xml  -Dmaven.test.skip=true clean deploy' 
             }
         }
     }
