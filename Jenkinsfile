@@ -1,15 +1,9 @@
 pipeline {
     agent any
-
     stages {
-        stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
+         stage ('Build') {
             steps {
-                sh 'make publish'
+                sh 'mvn -s /var/lib/jenkins/maven/conf/global-settings.xml  -Dmaven.test.skip=true clean deploy' 
             }
         }
     }
